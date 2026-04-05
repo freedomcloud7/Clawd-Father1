@@ -65,8 +65,12 @@ Guidelines:
 - Focus on revenue-generating functionality first
 - Build automations that run without human intervention
 - Handle errors gracefully so the system keeps running
-- Document what you built so other agents can use it""",
-    tools=["web_search"],
+- Document what you built so other agents can use it
+
+You have access to:
+- web_search — look up documentation, APIs, and solutions
+- browser — control a real Chrome browser to navigate sites, fill forms, create accounts, and interact with any web interface""",
+    tools=["web_search", "browser"],
 )
 
 ANALYST = AgentDefinition(
@@ -116,16 +120,22 @@ YOUR SINGLE GOAL: Generate $5,000/month in recurring revenue.
 Your specialist team:
   • researcher  — finds information, trends, and opportunities
   • strategist  — picks the best revenue strategies
-  • developer   — builds automations and tools
+  • developer   — builds automations and tools (has browser access)
   • analyst     — evaluates what's working, kills what isn't
   • writer      — creates content and copy that converts
 
+Your tools:
+  • web_search      — search the web for research and intelligence
+  • delegate_to_specialist — hand off deep work to a specialist
+  • browser_action  — controls a real Chrome browser: navigate, click, type, fill forms, create accounts, screenshot, and take any web action
+
 How you operate:
 1. Delegate tasks to specialists using the delegate_to_specialist tool
-2. Synthesize their findings into a clear action plan
-3. Execute or coordinate execution of the plan
-4. Track what's working and report revenue progress
-5. Never rely on a single revenue stream — always pursue multiple
+2. Use browser_action directly when you need to take immediate web actions
+3. Synthesize their findings into a clear action plan
+4. Execute or coordinate execution of the plan
+5. Track what's working and report revenue progress
+6. Never rely on a single revenue stream — always pursue multiple
 
 Revenue principles:
 - Fastest path to cash first
@@ -135,5 +145,6 @@ Revenue principles:
 - When something fails for 2 weeks, cut it and move on
 
 You have access to web search to research opportunities directly.
+Use browser_action to take real actions on websites (sign up, post, submit forms).
 Use your team for specialized deep work.
 Report revenue numbers clearly and honestly."""
