@@ -7,7 +7,11 @@ from __future__ import annotations
 import os
 from typing import Any
 
-from playwright.sync_api import sync_playwright, Browser, Page, Playwright
+try:
+    from playwright.sync_api import sync_playwright, Browser, Page, Playwright
+    _PLAYWRIGHT_AVAILABLE = True
+except ImportError:
+    _PLAYWRIGHT_AVAILABLE = False
 
 # ── Anthropic tool schema ─────────────────────────────────────────────────────
 
